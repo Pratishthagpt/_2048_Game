@@ -15,19 +15,19 @@ public class Game_2048 {
     public static final int DIMENSION = 4;
     public static int [][] grid;
     public static int score;
-    public static int maxScore;
+    public static int Best;
     public static JFrame gridFrame;
     public static JPanel gridPanel;
     public static JLabel [][] gridlabels;
     public static JLabel scoreLabel;
-    public static JLabel maxScoreLabel;
+    public static JLabel BestScoreLabel;
     public static boolean isGameWon = false;
 
 //    initialize the settings before start of game
     public Game_2048() {
         grid = new int[DIMENSION][DIMENSION];
         score = 0;
-        maxScore = 0;
+        Best = 0;
         isGameWon = false;
 
 //        create the GUI Components
@@ -60,11 +60,11 @@ public class Game_2048 {
 //        creating the information panel
         JPanel infoPanel = new JPanel(new GridLayout(2,2));
         scoreLabel = new JLabel("Your Score: 0", JLabel.CENTER);
-        maxScoreLabel = new JLabel("Max Score: 0", JLabel.CENTER);
+        BestScoreLabel = new JLabel("Max Score: 0", JLabel.CENTER);
         scoreLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
-        maxScoreLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
+        BestScoreLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
         infoPanel.add(scoreLabel);
-        infoPanel.add(maxScoreLabel);
+        infoPanel.add(BestScoreLabel);
 
         gridFrame.add(infoPanel, BorderLayout.NORTH);
 

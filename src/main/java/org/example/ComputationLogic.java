@@ -137,9 +137,9 @@ public class ComputationLogic {
 
     public static void updateScore() {
         scoreLabel.setText("Score: " + score);
-        if(score > maxScore) {
-            maxScore = score;
-            maxScoreLabel.setText("Max Score: " + maxScore);
+        if(score > Best) {
+            Best = score;
+            BestScoreLabel.setText("Max Score: " + Best);
         }
     }
 
