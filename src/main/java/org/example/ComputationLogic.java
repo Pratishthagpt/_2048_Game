@@ -12,16 +12,17 @@ public class ComputationLogic {
         int prevScore = score;
         boolean isTileMoved = false;
         for (int j = 0; j < DIMENSION; j++) {
-            int mergeValue = -1;
+//            int mergeValue = -1;
             for (int i = 1; i < DIMENSION; i++) {
                 if (grid[i][j] != 0) {
                     int row = i;
                     while (row > 0 && (grid[row - 1][j] == 0 || grid[row - 1][j] == grid[row][j])) {
-                        if (grid[row - 1][j] == grid[row][j] && mergeValue != row - 1) {
+//                        if (grid[row - 1][j] == grid[row][j] && mergeValue != row - 1) {
+                        if (grid[row - 1][j] == grid[row][j]) {
                             grid[row - 1][j] *= 2;
                             score += grid[row - 1][j];
                             grid[row][j] = 0;
-                            mergeValue = row - 1;
+//                            mergeValue = row - 1;
                             isTileMoved = true;
                         } else if (grid[row - 1][j] == 0) {
                             grid[row - 1][j] = grid[row][j];
@@ -44,16 +45,16 @@ public class ComputationLogic {
         int prevScore = score;
         boolean isTileMoved = false;
         for (int j = 0; j < DIMENSION; j++) {
-            int mergeValue = -1;
+//            int mergeValue = -1;
             for (int i = DIMENSION - 2; i >= 0; i--) {
                 if (grid[i][j] != 0) {
                     int row = i;
                     while (row < DIMENSION - 1 && (grid[row + 1][j] == 0 || grid[row + 1][j] == grid[row][j])) {
-                        if (grid[row + 1][j] == grid[row][j] && mergeValue != row + 1) {
+                        if (grid[row + 1][j] == grid[row][j] ) {
                             grid[row + 1][j] *= 2;
                             score += grid[row + 1][j];
                             grid[row][j] = 0;
-                            mergeValue = row + 1;
+//                            mergeValue = row + 1;
                             isTileMoved = true;
                         } else if (grid[row + 1][j] == 0) {
                             grid[row + 1][j] = grid[row][j];
@@ -76,16 +77,16 @@ public class ComputationLogic {
         int prevScore = score;
         boolean isTileMoved = false;
         for (int i = 0; i < DIMENSION; i++) {
-            int mergeValue = -1;
+//            int mergeValue = -1;
             for (int j = 1; j < DIMENSION; j++) {
                 if (grid[i][j] != 0) {
                     int col = j;
                     while (col > 0 && (grid[i][col - 1] == 0 || grid[i][col - 1] == grid[i][col])) {
-                        if (grid[i][col - 1] == grid[i][col] && mergeValue != col - 1) {
+                        if (grid[i][col - 1] == grid[i][col]) {
                             grid[i][col - 1] *= 2;
                             score += grid[i][col - 1];
                             grid[i][col] = 0;
-                            mergeValue = col - 1;
+//                            mergeValue = col - 1;
                             isTileMoved = true;
                         } else if (grid[i][col - 1] == 0) {
                             grid[i][col - 1] = grid[i][col];
@@ -108,16 +109,16 @@ public class ComputationLogic {
         int prevScore = score;
         boolean isTileMoved = false;
         for (int i = 0; i < DIMENSION; i++) {
-            int mergeValue = -1;
+//            int mergeValue = -1;
             for (int j = DIMENSION - 2; j >= 0; j--) {
                 if (grid[i][j] != 0) {
                     int col = j;
                     while (col < DIMENSION - 1 && (grid[i][col + 1] == 0 || grid[i][col + 1] == grid[i][col])) {
-                        if (grid[i][col + 1] == grid[i][col] && mergeValue != col + 1) {
+                        if (grid[i][col + 1] == grid[i][col] ) {
                             grid[i][col + 1] *= 2;
                             score += grid[i][col + 1];
                             grid[i][col] = 0;
-                            mergeValue = col + 1;
+//                            mergeValue = col + 1;
                             isTileMoved = true;
                         } else if (grid[i][col + 1] == 0) {
                             grid[i][col + 1] = grid[i][col];
