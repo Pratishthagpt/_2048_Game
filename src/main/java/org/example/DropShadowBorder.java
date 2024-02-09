@@ -6,7 +6,8 @@ import java.awt.geom.Point2D;
 
 public class DropShadowBorder implements Border {
 
-    private static final int SHADOW_SIZE = 10;
+    private static final int SHADOW_SIZE = 20;
+    private static final int RADIUS = 20;
     private static final Color SHADOW_COLOR_START = new Color(0, 0, 0, 100);
     private static final Color SHADOW_COLOR_END = new Color(0, 0, 0, 0);
 
@@ -26,7 +27,7 @@ public class DropShadowBorder implements Border {
         g2d.setPaint(paint);
 
         // Fill the rectangle with the gradient shadow
-        g2d.fillRect(x, y, width, height);
+        g2d.fillRoundRect(x, y, width, height, RADIUS, RADIUS);
 
         g2d.dispose();
     }

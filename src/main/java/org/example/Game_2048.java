@@ -33,7 +33,7 @@ public class Game_2048 {
 //        create the GUI Components
         gridFrame = new JFrame("Welcome to 2048 Game!");
         gridFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gridFrame.setSize(375, 460);
+        gridFrame.setSize(500, 600);
         gridFrame.setBackground(Color.DARK_GRAY);
         gridFrame.setLayout(new BorderLayout());
 
@@ -44,10 +44,11 @@ public class Game_2048 {
 
         gridlabels = new JLabel[DIMENSION][DIMENSION];
 
+
         for (int i = 0; i < DIMENSION; i++) {
             for (int j = 0; j < DIMENSION; j++) {
                 gridlabels[i][j] = new JLabel("", JLabel.CENTER);
-                gridlabels[i][j].setFont(new Font("Cambria", Font.BOLD, 30));
+                gridlabels[i][j].setFont(new Font("Tahoma", Font.BOLD, 30));
                 gridlabels[i][j].setOpaque(true);
                 gridlabels[i][j].setBackground(Color.lightGray);
                 gridPanel.add(gridlabels[i][j]);
@@ -60,6 +61,8 @@ public class Game_2048 {
         JPanel infoPanel = new JPanel(new GridLayout(2,2));
         scoreLabel = new JLabel("Your Score: 0", JLabel.CENTER);
         maxScoreLabel = new JLabel("Max Score: 0", JLabel.CENTER);
+        scoreLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
+        maxScoreLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
         infoPanel.add(scoreLabel);
         infoPanel.add(maxScoreLabel);
 

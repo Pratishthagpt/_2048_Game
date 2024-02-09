@@ -1,12 +1,12 @@
 package org.example;
 
-import javax.swing.*;
 import java.awt.*;
 
 import static org.example.Game_2048.*;
 
 public class Update_GUI {
     public static void updateGridLabels() {
+        TileBorder tileBorder = new TileBorder();
 //        updating GUI grid labels with the current grid state
         for(int i = 0; i < DIMENSION; i++) {
             for (int j = 0; j < DIMENSION; j++) {
@@ -23,7 +23,8 @@ public class Update_GUI {
                     gridlabels[i][j].setText(String.valueOf(grid[i][j]));
                     gridlabels[i][j].setBackground(getTileColor(grid[i][j]));
                 }
-                gridlabels[i][j].setBorder(BorderFactory.createLineBorder(Color.BLACK));
+
+                gridlabels[i][j].setBorder(tileBorder);
             }
         }
     }
